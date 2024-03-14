@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <title>Document</title>
+</head>
+<body ng-app="myApp">
+  <div ng-controller="information">
+    <h1>{{ ten }}</h1>
+    <h1>{{ tuoi }}</h1>
+    <h1>{{ diachi }}</h1>
+  </div>
+  <script>
+
+    angular.module("myApp", [])
+      .controller("information", function ($scope) {
+        $scope.ten = "Hưng";
+        $scope.tuoi = "gần 20";
+        $scope.diachi = "88 Vĩnh Phúc";
+      });
+  </script>
+</body>
+</html>

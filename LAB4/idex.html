@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <title>Math App</title>
+</head>
+<body ng-app="myApp">
+  <div ng-controller="math">
+    <h1>X: {{ x }}</h1>
+    <input type="number" placeholder="Nhập X" ng-model="x">
+    <h1>Y: {{ y }}</h1>
+    <input type="number" placeholder="Nhập Y" ng-model="y">
+    <!-- <br>
+    <button ng-click="add()">Cộng</button>
+    <br/>
+    <button ng-click="subtract()">Cộng</button>
+    <br/> -->
+    <br>
+    <br>
+    <span>Kết quả công: x+y={{ add() }}</span><BR>
+    <span>Kết quả trừ: x-y={{ subtract() }}</span>
+  </div>
+  <script>
+    angular.module("myApp", [])
+      .controller("math", function ($scope) {
+        $scope.x = 0;
+        $scope.y = 0;
+
+        // Addition Functionality
+        $scope.add = function () {
+          return $scope.x + $scope.y;
+        };
+
+        // Subtraction Functionality (Optional)
+        $scope.subtract = function () {
+          return $scope.x - $scope.y;
+        };
+      });
+  </script>
+</body>
+</html>

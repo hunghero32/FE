@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- <script src="angular.js"></script> -->
+
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <!-- ng-app : phạm vi ứng dụng Angularjs -->
+    <div ng-controler="myCtrl">
+        <!-- ng-controller : Phạm vi giao diện điều khiển bởi controller (1 ứng dụng có thể nhiều controller) -->
+        <h1>{{ welcome }}</h1>
+    </div>
+    <script>
+        function myFunc($scope){
+            $scope.welcome ="Hello World!";
+        }
+        var app = angular.module("myApp",[]);
+        // tạo module ứng dụng angular 
+        app.controller("myCtrl",myFunc);
+        // định nghĩa hàm myFunc xử lý giao diện myCtrl
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="run">
+        <h1>{{ ten }}</h1>
+        <h3 ng-bind="expression"></h3>
+        <!-- Gán giá trị của biến  ng-bind -->
+        <input type="text" placeholder="Nhập tên..." ng-model="ten">
+        <br><br>
+        <!-- Hiển thị dữ liệu nhận vào -->
+    </div>
+    <script>
+
+        angular.module("myApp", [])
+            .controller("run", function ($scope) {
+                $scope.ten = "Hưng";
+
+            });
+    </script>
+</body>
+
+</html>
