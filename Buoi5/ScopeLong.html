@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="Parent">
+        <h2>
+            Cha : {{ parent }}
+        </h2>
+        <h2>
+            Con : {{ chill }}
+        </h2>
+
+    <hr>
+    <div ng-controller="Child">
+        <h2>
+            Cha : {{ parent }}
+        </h2>
+        <h2>
+            Con : {{ chill }}
+        </h2>
+        <h2>
+            $parent : {{ $parent.parent }}
+        </h2>
+    </div>
+</div>
+</body>
+<script>
+    angular.module( 'myApp', [] )
+           .controller('Parent', function($scope) {
+               $scope.parent = "I am the Parent";
+           })
+           .controller('Child', function($scope) {
+                // $scope.$parent.chill = "I am the Child";
+               $scope.chill = "I am the Child";
+
+           });
+           
+
+    // Call child controller from parent scope
+    var childCtrl = new Angular.controller("Child");
+    childCtrl.$scope.$parent = {};
+    document.getElementsByTagName("div")[0].appendChild(childCtrl.$element);
+</script>
+</html>

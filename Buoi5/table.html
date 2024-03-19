@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="nameCtrl">
+        <table border="1" class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Pass</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="u in user">
+                    <td>{{ u.id }}</td>
+                    <td>{{ u.pass }}</td>
+                    <td>{{ u.role }}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        angular.module( 'myApp', [] )
+        .controller('nameCtrl', function($scope) {
+            $scope.user = [
+                {"id": 1, "pass":"123456", "role":"admin"},
+                {"id": 2, "pass":"qwerty", "role":"member"}
+            ];
+            });
+    </script>
+</body>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="nameCtrl">
+       <li>Họ Tên : {{ student.name }}</li>
+       <li>Giới Tính:
+        <span ng-show="student.gender">Nam</span>
+        <span ng-hide="student.gender">Nữ</span>
+       </li>
+       <li>Xếp Loại : 
+        <span ng-if="student.mark < 5">Yếu</span>
+        <span ng-if="student.mark >= 5 && student.mark <6.5">Trung Bình</span>
+        <span ng-if="student.mark >=7.5 ">Giỏi</span>
+        
+       </li>
+        </div>
+</body>
+<script>
+    angular.module( 'myApp', [] )
+           .controller('nameCtrl', function($scope){
+               scope.student = {
+                name : 'Lê Văn A',
+                mark : 9.3,
+                gender : true
+               };
+               });
+</script>
+</html>
