@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.8.2/angular-route.js"></script>
+    <title>AngularJS - CRUD Operations Example</title>
+</head>
+<body ng-app="myApp">
+    <a href="#!/3">Màu Mặc Định</a>
+    <a href="#!/1">Màu Đỏ</a>
+    <a href="#!/2">Màu Xanh</a>
+    <div ng-view></div>
+
+<script>
+    angular.module('myApp', ["ngRoute"])
+        .config(function($routeProvider){
+            $routeProvider
+            .when("/", {
+                template: "Not Found!"
+            })
+            .when("/1", {
+                templateUrl: "red.html"
+            })
+            .when("/2", {
+                templateUrl: "blue.html"
+            })
+            .when("/3", {
+                templateUrl: "default.html"
+            })
+            .otherwise({
+                template : "Not Found!"
+            });
+        });
+</script>
+</body>
+</html>

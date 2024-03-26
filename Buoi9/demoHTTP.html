@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="nameCtrl">
+        <ul ng-repeat="item in arr">
+            <li>STT :<b>{{ item.id }}</b> / Tên Dòng Máy :<b> {{ item.name }}</b></li>
+        </ul>
+    </div>
+</body>
+<script>
+    angular.module('myApp', [])
+        .controller('nameCtrl', function ($scope, $http) {
+            $scope.arr = [];
+            $http.get("supplier.js").then(function (response) {
+                //console.log("success"); 
+                console.log(response);
+                $scope.arr = response.data
+            },
+                function (response) {
+                    console.log("error");
+                });
+        });
+</script>
+
+</html>
