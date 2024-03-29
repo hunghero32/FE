@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>author</th>
+        <th>price</th>
+<th></th>
+    </thead>
+    <tbody ng-repeat="bookController in arr ">
+            <td>{{ bookController.id }}</td>
+            <td>{{ bookController.name }}</td>
+            <td>{{ bookController.author }}</td>
+            <td>{{ bookController.price }}</td>
+            <td> <button ng-click="delete(bookController.id)">Xóa </button></td>
+        </tbody>
+    </table>
