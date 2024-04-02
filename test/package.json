@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "angular-resource": "^1.8.3",
+    "json-server": "^1.0.0-alpha.23"
+  }
+}

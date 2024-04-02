@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Thưởng Tết Nguyên Đán</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="myctr1">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">TÍNH THƯỞNG TẾT NGUYÊN ĐÁN</h2>
+        </div>
+        <form class="panel-body" name="frmBonus">
+            <div class="form-group">
+                <label>Họ và tên</label>
+                <input class="form-control" ng-model="fullname" name="txtFullname" required />
+                <span ng-show="frmBonus.txtFullname.$invalid">Vui lòng nhập họ và tên</span>
+            </div>
+            <div class="form-group">
+                <label>Lương</label>
+                <div class="input-group">
+                    <input class="form-control" ng-model="salary" name="txtSalary" type="number" min="2000000" />
+                    <div class="input-group-addon">VNĐ</div>
+                </div>
+                <span ng-show="frmBonus.txtSalary.$error.number || frmBonus.txtSalary.$error.min">Lương ít nhất 2 triệu</span>
+            </div>
+            <h4 ng-show="frmBonus.$valid">Chúc mừng bạn đã nhập đúng</h4>
+        </form>
+        <div class="panel-footer">
+            TIỀN THƯỞNG: <strong>{{getBonus() | number:2}}</strong> VNĐ
+        </div>
+    </div>
+</div>
+<script>
+    var app = angular.module("myapp", []);
+    app.controller("myctr1", function ($scope) {
+        $scope.ages = [
+            {age: "Dưới 25", rate: 0.07},
+            {age: "Từ 25 đến 40", rate: 0.1},
+            {age: "Trên 40", rate: 0.15}
+        ];
+
+        $scope.age = $scope.ages[1];
+        $scope.gender = "NAM";
+
+        $scope.getBonus = function () {
+            var bonus = $scope.age.rate;
+            if ($scope.gender === "NU") {
+                bonus += 200000;
+            }
+            return bonus * $scope.salary;
+        };
+    });
+</script>
+</body>
+</html>

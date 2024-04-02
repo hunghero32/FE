@@ -1,0 +1,16 @@
+<table border="1" class="table">
+    <thead>
+        <th>Id</th>
+        <th>Kiểu</th>
+        <th>Nội Dung</th>
+<th></th>
+    </thead>
+    <tbody ng-repeat="post in arr ">
+            <td>{{ post.id }}</td>
+            <td>{{ post.title }}</td>
+            <td>{{ post.body }}</td>
+            <td> <button ng-click="delete(post.id)">Xóa </button></td>
+        </tbody>
+    </table>
+    <br>
+    <button ng-click="add">Thêm</button>

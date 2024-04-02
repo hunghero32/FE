@@ -1,0 +1,29 @@
+{
+  "post": [
+    {
+      "id": "1",
+      "title": "post1",
+      "body": "Nội Dung 1"
+    },
+    {
+      "id": "2",
+      "title": "post2",
+      "body": "Nội Dung 2"
+    },
+    {
+      "id": "3",
+      "title": "post3",
+      "body": "Nội Dung 3"
+    },
+    {
+      "id": "4",
+      "title": "post4",
+      "body": "Nội Dung 4"
+    },
+    {
+      "id": "5",
+      "title": "post5",
+      "body": "Nội Dung 5"
+    }
+  ]
+}
