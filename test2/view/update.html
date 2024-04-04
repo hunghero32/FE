@@ -1,0 +1,17 @@
+<body ng-app="myApp">
+    <div ng-controller="hoadonToUpdate">
+        <form >
+            <label class="form-label">Mã Sản Phẩm</label>
+            <input type="number" class="form-control" ng-model="hoadonToUpdate.ma" placeholder=""/>
+            <label class="form-label">Tên Sản Phẩm</label>
+            <input type="text" class="form-control" ng-model="hoadonToUpdate.ten" placeholder=""/>
+            <label class="form-label">Số Lượng</label>
+            <input type="number" class="form-control" ng-model="hoadonToUpdate.soluong" placeholder=""/>
+            <label class="form-label">Giá</label>
+            <input type="number" class="form-control" ng-model="hoadonToUpdate.gia" />
+
+            <!-- Sử dụng hoadonToUpdate.id để truyền id của hoá đơn cần cập nhật -->
+            <button type="button" ng-click="update(hoadon.id)">Lưu</button>
+        </form>
+    </div>
+</body>

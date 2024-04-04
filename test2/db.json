@@ -1,0 +1,60 @@
+{
+  "hoadon": [
+    {
+      "id": "1",
+      "ma": 1,
+      "ten": "Iphone",
+      "soluong": 5,
+      "gia": 50000
+    },
+    {
+      "id": "2",
+      "ma": 2,
+      "ten": "Samsung",
+      "soluong": 5,
+      "gia": 50000
+    },
+    {
+      "id": "3",
+      "ma": 3,
+      "ten": "Vivo",
+      "soluong": 5,
+      "gia": 50000
+    },
+    {
+      "id": "4",
+      "ma": 4,
+      "ten": "Oppo",
+      "soluong": 5,
+      "gia": 50000
+    },
+    {
+      "id": "5",
+      "ma": 5,
+      "ten": "Xiaomi",
+      "soluong": 5,
+      "gia": 50000
+    },
+    {
+      "id": "6",
+      "ma": 6,
+      "ten": "Leonovo",
+      "soluong": 5,
+      "gia": 50000
+    },
+    {
+      "id": "7",
+      "ma": 7,
+      "ten": "Iphone",
+      "soluong": 5,
+      "gia": 50000
+    },
+    {
+      "id": "1e42",
+      "ma": 3,
+      "ten": "Hưng",
+      "soluong": 10,
+      "gia": 5
+    }
+  ]
+}

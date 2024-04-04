@@ -1,0 +1,16 @@
+<body ng-app="myApp">
+    <div ng-controller="hoadon">
+        <form>
+            <label class="form-label">Mã Sản Phẩm</label>
+            <input type="number" class="form-control" ng-model="hoadon.ma" placeholder="Mã Sản Phẩm"/>
+            <label class="form-label">Tên Sản Phẩm</label>
+            <input type="text" class="form-control" ng-model="hoadon.ten" placeholder="Tên Sản Phẩm"/>
+            <label class="form-label">Số Lượng</label>
+            <input type="number" class="form-control" ng-model="hoadon.soluong" placeholder="Số Lượng"/>
+            <label class="form-label">Giá</label>
+            <input type="number" class="form-control" ng-model="hoadon.gia" placeholder="Giá"/>
+
+            <a ng-href="#!"><button type="button" ng-click="add()" >THÊM</button></a>
+        </form>
+    </div>
+</body>

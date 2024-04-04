@@ -1,0 +1,22 @@
+<table border="1" class="table">
+    <thead>
+        <th>Id</th>
+        <th>Mã Sản Phẩm</th>
+        <th>Tên Sản Phẩm</th>
+        <th>Số Lượng</th>
+        <th>Giá</th>
+        <th></th>
+    </thead>
+    <tbody ng-repeat="hoadon in arr ">
+        <td>{{ hoadon.id }}</td>
+        <td>{{ hoadon.ma }}</td>
+        <td>{{ hoadon.ten }}</td>
+        <td>{{ hoadon.soluong }}</td>
+        <td>{{ hoadon.gia }}</td>
+        <td><button ng-click="delete(hoadon.id)">Xóa</button> 
+        <a ng-href="#!/update/{{ hoadon.id }}">Sửa</a> <!-- Sửa đổi link sử dụng AngularJS route -->
+    </td>
+</tbody>
+</table>
+<br>
+<a ng-href="#!/add">Thêm</a> <!-- Sửa đổi link sử dụng AngularJS route -->

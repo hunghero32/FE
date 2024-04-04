@@ -25,74 +25,74 @@
 </div>
 </div>
 <script>
-var app = angular.module('myApp', []);
-app.controller('viewCtrl', function ($scope) {
-$scope.student = {};
-$scope.save = function () {
-$scope.list_student.push(angular.copy($scope.student));
-};
+    var app = angular.module('myApp', []);
+    app.controller('viewCtrl', function ($scope) {
+        $scope.student = {};
+        $scope.save = function () {
+            $scope.list_student.push(angular.copy($scope.student));
+        };
 
-$scope.edit = function (index) {
-$scope.index = index;
-$scope.student = angular.copy($scope.list_student[index]);
-};
+        $scope.edit = function (index) {
+            $scope.index = index;
+            $scope.student = angular.copy($scope.list_student[index]);
+        };
 
-$scope.update = function () {
-$scope.list_student[$scope.index] = angular.copy($scope.student);
-$scope.clear();
-};
+        $scope.update = function () {
+            $scope.list_student[$scope.index] = angular.copy($scope.student);
+            $scope.clear();
+        };
 
-$scope.delete = function () {
-$scope.list_student.splice($scope.index, 1);
-$scope.clear();
-};
+        $scope.delete = function () {
+            $scope.list_student.splice($scope.index, 1);
+            $scope.clear();
+        };
 
-$scope.cancel = function () {
-if ($scope.index == -1) {
-$scope.clear();
-} else {
-$scope.edit($scope.index);
-}
-}
-$scope.clear = function () {
-$scope.student = {};
-};
-$scope.list_student = [
-{
-"name": "Hưng1",
-"birthday": "7/1/2012",
-"mark": 7,
-},
-{
-"name": "Hưng2",
-"birthday": "9/12/2012",
-"mark": 7,
-},
-{
-"name": "Hưng3",
-"birthday": "1/12/2012",
-"mark": 7,
-},
-{
-"name": "Hưng4",
-"birthday": "3/5/2012",
-"mark": 7,
-},
-{
-"name": "Hưng5",
-"birthday": "3/6/2012",
-"mark": 7,
-}
-];
+        $scope.cancel = function () {
+            if ($scope.index == -1) {
+                $scope.clear();
+            } else {
+                $scope.edit($scope.index);
+            }
+        }
+        $scope.clear = function () {
+            $scope.student = {};
+        };
+        $scope.list_student = [
+            {
+                "name": "Hưng1",
+                "birthday": "7/1/2012",
+                "mark": 7,
+            },
+            {
+                "name": "Hưng2",
+                "birthday": "9/12/2012",
+                "mark": 7,
+            },
+            {
+                "name": "Hưng3",
+                "birthday": "1/12/2012",
+                "mark": 7,
+            },
+            {
+                "name": "Hưng4",
+                "birthday": "3/5/2012",
+                "mark": 7,
+            },
+            {
+                "name": "Hưng5",
+                "birthday": "3/6/2012",
+                "mark": 7,
+            }
+        ];
 
-});
+    });
 </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-crossorigin="anonymous"></script>
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-crossorigin="anonymous"></script>
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
 
 </html>

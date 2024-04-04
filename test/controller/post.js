@@ -19,21 +19,4 @@ angular.module('myApp', ['ngRoute'])
                     }
                 )
         }
-        // $scope.insert = function () {
-        //     const add = angular.copy($scope.add);
-      
-        //     $http.post(API, add)
-        //       .then(function (response) {
-        //         if (response.status === 201) { 
-        //           $scope.arr.push(response.data); 
-        //           $scope.add = {};
-        //           alert("Insert Successful!");
-        //         } else {
-        //           console.error('Unexpected response status:', response.status);
-        //         }
-        //       })
-        //       .catch(function (error) {
-        //         console.error('Error inserting add:', error);
-        //       });
-        //   };
     });

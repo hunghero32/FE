@@ -27,17 +27,17 @@
             <div class="card-body">
                 <form>
                     <div class="form-outline mb-4">
-                        <input type="text" id="form1Example1" class="form-control" ng-model="student.fullname"/>
+                        <input type="text" id="form1Example1" class="form-control" ng-model="student.fullname" />
                         <label class="form-label" for="form1Example1">Họ và tên</label>
                     </div>
 
                     <div class="form-outline mb-4">
-                        <input type="text" id="form1Example2" class="form-control" ng-model="student.birthday"/>
+                        <input type="text" id="form1Example2" class="form-control" ng-model="student.birthday" />
                         <label class="form-label" for="form1Example2">Ngày sinh</label>
                     </div>
 
                     <div class="form-outline mb-4">
-                        <input type="text" id="form1Example3" class="form-control" ng-model="student.mark"/>
+                        <input type="text" id="form1Example3" class="form-control" ng-model="student.mark" />
                         <label class="form-label" for="form1Example3">Điểm</label>
                     </div>
                     <button class="btn btn-success" ng-click="insert()">THÊM</button>
@@ -64,7 +64,8 @@
                     <th>{{sv.fullname}}</th>
                     <td>{{sv.birthday}}</td>
                     <td>{{sv.mark}}</td>
-                    <td><button class="btn" ng-click="edit($index)">Sửa</button><button class="btn btn-success" ng-click="delete()">XÓA</button></td>
+                    <td><button class="btn" ng-click="edit($index)">Sửa</button><button class="btn btn-success"
+                            ng-click="delete()">XÓA</button></td>
                 </tr>
             </tbody>
         </table>
@@ -74,7 +75,7 @@
 </body>
 <script>
     var app = angular.module("myapp", []);
-    app.controller("myctrl", function($scope){
+    app.controller("myctrl", function ($scope) {
         $scope.$parent.students = [
             { fullname: "Thi Hoài", birthday: "05/05/2000", mark: 8.5 },
             { fullname: "Đỗ Đạt Cao", birthday: "24/03/2000", mark: 9 },
@@ -85,37 +86,37 @@
         $scope.student = {};
         $scope.index = -1;
 
-        $scope.edit = function(chiso){
+        $scope.edit = function (chiso) {
             $scope.index = chiso;
             $scope.student = angular.copy($scope.students[chiso]);
         }
 
-        $scope.update = function(){
+        $scope.update = function () {
             $scope.students[$scope.index] = angular.copy($scope.student);
         }
 
-        $scope.reset = function(){
+        $scope.reset = function () {
             $scope.student = {};
             $scope.index = -1;
         }
 
-        $scope.insert = function(){
+        $scope.insert = function () {
             $scope.students.push(angular.copy($scope.student));
             $scope.reset();
         }
 
-        $scope.cancel = function(){
-            if($scope.index == -1) $scope.reset();
+        $scope.cancel = function () {
+            if ($scope.index == -1) $scope.reset();
             else $scope.edit($scope.index);
         }
 
-        $scope.delete = function(){
+        $scope.delete = function () {
             $scope.students.splice($scope.index, 1);
             $scope.reset();
         }
     })
 
-  
+
 </script>
 
 </html>
