@@ -1,0 +1,25 @@
+{
+  "HoaDon": [
+    {
+      "id": "1f06",
+      "maSP": "1",
+      "tenSP": "2",
+      "soLuong": "3",
+      "gia": "4"
+    },
+    {
+      "maSP": "111",
+      "tenSP": "leu leu",
+      "soLuong": "555",
+      "gia": "ads",
+      "id": "950f"
+    },
+    {
+      "id": "5a86",
+      "maSP": "ec",
+      "tenSP": "ec ec",
+      "soLuong": "huhu",
+      "gia": "1"
+    }
+  ]
+}

@@ -36,7 +36,7 @@
         var app=angular.module("productApp",[]);
         app.controller("ProductController",['$http',function($http){
             var vm=this;
-            $http.get('https://hungnttg.github.io/products.json')
+            $http.get('http://localhost:3000/product')
             .then(function(response){
                 vm.products=response.data;
             },function(error){

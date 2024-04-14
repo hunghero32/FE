@@ -1,0 +1,7 @@
+{
+    "product":[
+    {"name": "Product 1", "price": 100, "discount": 0.1, "date": "2024-03-26"},
+    {"name": "Product 2", "price": 200, "discount": 0.2, "date": "2024-03-27"},
+    {"name": "Product 3", "price": 150, "discount": 0.15, "date": "2024-03-28"},
+    {"name": "Product 4", "price": 120, "discount": 0.12, "date": "2024-03-29"}
+]}

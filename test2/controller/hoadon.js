@@ -1,5 +1,4 @@
 var API = "http://localhost:3000/hoadon";
-
 angular.module('myApp', ['ngRoute'])
     .controller('hoadon', function ($scope, $http) {
         $scope.arr = [];
@@ -43,23 +42,4 @@ angular.module('myApp', ['ngRoute'])
                     // Xử lý lỗi tại đây nếu cần
                 });
         }
-        $scope.update = function(id) {
-            // Gửi yêu cầu GET đến API để lấy thông tin hoá đơn dựa trên id
-            $http.get(`${API}/${id}`)
-                .then(function(response) {
-                    if (response.data) {
-                        let hoadonToUpdate = response.data;
-        
-                        // Hiển thị thông tin hoá đơn trong form để cập nhật
-                        $scope.hoadon = hoadonToUpdate;
-                    } else {
-                        console.error('Không tìm thấy hoá đơn có id:', id);
-                    }
-                })
-                .catch(function(error) {
-                    console.error('Lỗi khi lấy thông tin hoá đơn:', error);
-                    // Xử lý lỗi nếu cần
-                });
-        };
-        
     });

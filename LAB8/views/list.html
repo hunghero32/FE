@@ -1,0 +1,24 @@
+<table class="table table-bordered">
+    <thead  >
+        <tr>
+            <th class="bg-primary">Mã sản phẩm</th>
+            <th class="bg-primary">Tên sản phẩm</th>
+            <th class="bg-primary">Số lượng</th>
+            <th class="bg-primary">Giá</th>
+            <th class="bg-primary"></th>
+        </tr>
+    <tbody>
+        <tr ng-repeat="list in listHd">
+            <td>{{list.maSP}}</td>
+            <td>{{list.tenSP}} </td>
+            <td>{{list.soLuong}}</td>
+            <td>{{list.gia}}</td>
+            <td>
+                <button class="btn btn-primary" ng-click="btnDelete(list.id)">Xóa</button>
+                <a class="btn btn-primary" href="#!listHoaDon/edit/{{list.id}}">Sửa</a>
+            </td>
+        </tr>
+    </tbody>
+    </thead>
+</table>
+<a href="#!listHoaDon/add">Thêm mới sản phẩm</a>
