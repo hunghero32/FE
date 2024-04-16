@@ -1,16 +1,19 @@
-angular.module('myApp')
-.config(function($routeProvider) {
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function ($routeProvider) {
     $routeProvider
-    .when("/", {
-        templateUrl: "view/list.html",
-        controller: "hoadon" 
-    })
-    .when("/add", {
-        templateUrl: "view/add.html",
-        controller: "hoadon" 
-    })
-    .when("/update/:id", {
-        templateUrl: "view/update.html",
-        controller: "update" 
-    });
-});
+        .when("/", {
+            templateUrl: "views/list.html",
+            controller: "list"
+        })
+        .when("/add", {
+            templateUrl: "views/add.html",
+            controller: "add"
+        })
+        .when("/update/:id", {
+            templateUrl: "views/edit.html",
+            controller: "update"
+        })
+        .otherwise({
+            redirectTo: "views/list.html"
+        })
+})

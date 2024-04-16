@@ -1,0 +1,16 @@
+<table border="1" class="table">
+    <thead>
+        <th>Id</th>
+        <th>Tên Sản Phẩm</th>
+        <th></th>
+    </thead>
+    <tbody ng-repeat="hoadon in list ">
+        <td>{{ hoadon.id }}</td>
+        <td>{{ hoadon.name }}</td>
+        <td><button ng-click="delete(hoadon.id)">Xóa</button> 
+        <a ng-href="#!/update/{{ hoadon.id }}">Sửa</a>
+    </td>
+</tbody>
+</table>
+<br>
+<a ng-href="#!/add">Thêm</a>

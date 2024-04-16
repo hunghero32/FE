@@ -11,7 +11,7 @@ angular.module('myApp')
     })
     .when("/update/:id", {
         templateUrl: "view/update.html",
-        controller: "hoadon" 
+        controller: "update" 
     });
 });
 

@@ -1,7 +1,8 @@
 var API = "http://localhost:3000/hoadon";
 angular.module('myApp', ['ngRoute'])
-    .controller('hoadon', function ($scope, $http) {
+    .controller('hoadon', function ($scope, $http, $routeParams) {
         $scope.arr = [];
+        $scope.id = $routeParams.id;
         // Lấy dữ liệu 
         $http.get(API).then(function (response) {
             $scope.arr = response.data;
@@ -42,4 +43,28 @@ angular.module('myApp', ['ngRoute'])
                     // Xử lý lỗi tại đây nếu cần
                 });
         }
-    });
+    })
+    app.controller("update", function ($scope, $http, $routeParams) {
+        $scope.hoadon = [];
+        $scope.id = $routeParams.id;
+    
+        $http.get(`${API}/${$routeParams.id}`).then(function (res) {
+            $scope.hoadon = res.data;
+        }), function () {
+            alert("loiiii");
+        }
+        $scope.update = function () {
+            $scope.updateParams = {
+                "ma": $scope.hoadon.ma,
+                "ten": $scope.hoadon.ten,
+                "soluong": $scope.hoadon.soluong,
+                "gia": $scope.hoadon.gia
+            }
+            $http.put(`${API}/${$scope.id}`, $scope.updateParams).then(function () {
+                alert("sua thanh cong");
+                return document.location = "#!";
+            }), function () {
+                alert("sua khong thanh cong")
+            }
+        }
+    })
